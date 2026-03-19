@@ -20,30 +20,29 @@
 // Explanation: Delete position 2 (element 20), remaining elements shift left
 
 #include <stdio.h>
+
 int main() {
     int n, pos;
-
-    printf("Enter number of elements: ");
+    int arr[100];
+    
     scanf("%d", &n);
-
-    int arr[n];
-
-    printf("Enter elements:\n");
-    for(int i = 0; i < n; i++) {
+    
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
-
-    printf("Enter position to delete: ");
+    
     scanf("%d", &pos);
-
-    for(int i = pos - 1; i < n - 1; i++) {
+    
+    // Shift elements left
+    for (int i = pos - 1; i < n - 1; i++) {
         arr[i] = arr[i + 1];
     }
-
-    printf("Updated array:\n");
-    for(int i = 0; i < n - 1; i++) {
-        printf("%d ", arr[i]);
+    
+    for (int i = 0; i < n - 1; i++) {
+        printf("%d", arr[i]);
+        if (i < n - 2) printf(" ");
     }
-
+    printf("\n");
+    
     return 0;
 }
