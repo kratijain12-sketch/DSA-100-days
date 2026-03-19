@@ -23,36 +23,27 @@
 #include <stdio.h>
 
 int main() {
-    int n, pos, x, i;
-    
-    printf("Enter number of elements: ");
+    int n, pos, x;
+    int arr[101];
+
     scanf("%d", &n);
-
-    int arr[n+1];   
-
-    printf("Enter array elements:\n");
-    for(i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    printf("Enter position: ");
-    scanf("%d", &pos);
+    scanf("%d %d", &pos, &x);
 
-    printf("Enter element to insert: ");
-    scanf("%d", &x);
-
-    
-    for(i = n; i >= pos; i--) {
-        arr[i] = arr[i-1];
+    for (int i = n; i >= pos; i--) {
+        arr[i] = arr[i - 1];
     }
 
+    arr[pos - 1] = x;
 
-    arr[pos-1] = x;
-
-    printf("Updated array:\n");
-    for(i = 0; i <= n; i++) {
-        printf("%d ", arr[i]);
+    for (int i = 0; i <= n; i++) {
+        printf("%d", arr[i]);
+        if (i < n) printf(" ");
     }
+    printf("\n");
 
     return 0;
 }
