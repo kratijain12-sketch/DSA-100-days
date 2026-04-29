@@ -26,8 +26,7 @@ int main() {
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
-    }
-    
+    }   
     int slow = 0;
     for (int fast = 1; fast < n; fast++) {
         if (arr[fast] != arr[slow]) {
